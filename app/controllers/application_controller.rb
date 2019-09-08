@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
 
 # handles post request sent when user submits on the signup form, it contains code that gets the new user's info from the params hash, creates a new user, signs them in, then directs them to users/home 
   post '/registrations' do
-    @user = User.new(name: params[:name], email: params[:email], password: params[:password])
+    @user = User.new(name: params["name"], email: params["email"], password: params["password"])
     @user.save
     session[:user_id] = @user.id
 
