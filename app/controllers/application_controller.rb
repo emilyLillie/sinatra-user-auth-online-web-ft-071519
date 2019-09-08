@@ -33,6 +33,7 @@ class ApplicationController < Sinatra::Base
 
 # post sessions receives the post request that gets sent when the user sumbits, contains code to grab the user's info from the params hash and looks to match the info against existing entries. if there's a match, signs the user in 
   post '/sessions' do
+    puts params 
     @user = User.find_by(email: params[:email], password: params[:password])
     if @user
       session[:user_id] = @user.id
