@@ -1,6 +1,6 @@
 # creates a users table with columns for name, email and pw 
 
-class Createusers < ActiveRecord::Migration
+class Createusers < ActiveRecord::Migration[4.2]
   require_relative './config/environment' 
    
    
